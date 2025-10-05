@@ -329,3 +329,12 @@ function filterUser(users:User[]){
     return users.filter((user)=>user.age>=18)
 
 }
+
+const filteredUser=filterUser([{
+    firstName:"harshit",
+    lastName:"Kharayat",
+    age:12
+
+}])
+
+console.log(filteredUser);
