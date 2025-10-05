@@ -97,3 +97,103 @@ function fun(a:sumInput,b:sumInput):number | string{
 console.log(fun(120,"hello"));
 
 // Interfaces can be used inside another interfaces
+
+interface Address{
+    city:string,
+    country:string,
+    pincode:number,
+}
+
+
+interface User{
+    name:string,
+    age:number,
+    address:Address,
+}
+interface Company{
+    address:Address
+}
+
+
+//
+// creating an object using Interface
+interface People{
+    name:string,
+    age:number,
+    // greet1:()=>string,
+    // greet2():string,
+    
+}
+
+let person:People={
+    name:"harshit",
+    age:10,
+    // greet1:()=>{
+    //     return "hello Harshit";
+    // },
+    // greet2() {
+    //     return "world";
+    // },
+
+}
+
+// console.log(person.greet1());
+// console.log(person.greet2());
+
+// Implementing Interfaces as a Class
+// Creating a class that implements Interface
+
+
+class Manager implements People{
+
+        name:string;
+        age:number;
+
+        constructor(name:string,age:number){
+            this.name=name;
+            this.age=age;   
+            
+        }
+
+        
+
+
+}
+
+
+let user=new Manager("harshit",22);
+
+console.log(user.name);
+console.log(user.age);
+
+
+
+// Above implementation was using implements and now will use extends
+
+class Shape{
+    constructor(a:number){
+
+    }
+    area(){
+        console.log("Hi I am area !");
+
+    }
+    
+}
+
+class Rectangle extends Shape{
+    width:number;
+    height:number;
+    
+    constructor(){
+        super(1);  // call the constructor of the parent class
+        this.width=1;
+        this.height=2;
+    }
+
+}
+
+
+const r=new Rectangle();
+
+r.area();
