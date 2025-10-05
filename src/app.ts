@@ -66,3 +66,34 @@ delayedFun(function(){
 })
 
 console.log(isLegal(15));
+
+
+// interfaces
+
+
+interface userType{
+    firstName:string,
+    lastName:string,
+    age:number,
+}
+
+function greet1(user:userType):void{
+
+
+
+
+}
+
+// Types
+
+type sumInput=string| number;
+
+
+function fun(a:sumInput,b:sumInput):number | string{
+    return a;
+
+}
+
+console.log(fun(120,"hello"));
+
+// Interfaces can be used inside another interfaces
