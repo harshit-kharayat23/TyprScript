@@ -197,3 +197,41 @@ class Rectangle extends Shape{
 const r=new Rectangle();
 
 r.area();
+
+
+// One key difference between Interfaces and Types is that we can implement interfaces as class
+// types let you do unions and intersections
+
+
+/// Abract vs interfaces
+
+
+abstract class User{
+    name:string;
+
+    constructor(name:string){
+        this.name=name;
+    }
+    abstract greet():string;
+
+}
+
+class Emp extends User{
+    name:string;
+
+    constructor(name:string){
+        super(name);
+        this.name=name;
+
+    }
+
+    greet(){
+        return "hi"+this.name;
+    }
+
+}
+
+// abstract class can have default implementaions but interface cannot
+
+
+
