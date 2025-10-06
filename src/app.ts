@@ -362,34 +362,63 @@
 
 
 
-class BottleMaker{
+// class BottleMaker{
 
-    constructor(public name:string){
+//     constructor(public name:string){
 
-    }
+//     }
 
-}
-class MetalBottelMaker extends BottleMaker{
+// }
+// class MetalBottelMaker extends BottleMaker{
 
    
-    constructor(name:string){
-        super(name);
+//     constructor(name:string){
+//         super(name);
+//     }
+//     getValue(){
+//         console.log(this.name);
+//     }
+
+// }
+
+// let b1=new MetalBottelMaker("milton");
+// b1.getValue();
+
+
+
+class BottleMaker{
+
+        public name="Milton";
+
+}
+
+class MetalBottelMaker extends BottleMaker{
+
+        public material="Metal"; 
+
+
+
+}
+
+let b1=new MetalBottelMaker();
+console.log(b1);
+
+// readonly will not allow to change the name variable
+class User{
+    constructor(public readonly name:string){
+
     }
-    getValue(){
-        console.log(this.name);
+
+    changeName(){
+        this.name="hellow";
     }
 
 }
 
-let b1=new MetalBottelMaker("milton");
-b1.getValue();
-
-
-
-
-
-
-
+let u1=new User("Harsh");
+console.log(u1);
+u1.changeName();
+console.log(u1);
 
 
 
