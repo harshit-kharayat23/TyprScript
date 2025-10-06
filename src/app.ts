@@ -404,20 +404,60 @@ let b1=new MetalBottelMaker();
 console.log(b1);
 
 // readonly will not allow to change the name variable
+// class User{
+//     constructor(public name:string){
+
+//     }
+
+//     changeName(){
+//         this.name="hellow";
+//     }
+
+// }
+
+// let u1=new User("Harsh");
+// console.log(u1);
+// u1.changeName();
+// console.log(u1);
+
+
+// Getter and setter using get and set
+
+
 class User{
-    constructor(public readonly name:string){
+
+    constructor(public _name:string,public _age:number){
 
     }
 
-    changeName(){
-        this.name="hellow";
+    get name(){
+        return this._name
+    }
+
+    set name(value:string){
+        this._name=value;
+    }
+    get age(){
+        return this._age;
+    }
+
+    set age(value:number){
+        this._age=value;
     }
 
 }
 
-let u1=new User("Harsh");
+let u1=new User("harshit",12);
 console.log(u1);
-u1.changeName();
+
+console.log(u1.name);
+u1.name="Anjali"
+console.log(u1);
+
+console.log(u1.age);
+
+console.log(u1);
+u1.age=21;
 console.log(u1);
 
 
