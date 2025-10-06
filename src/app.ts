@@ -317,24 +317,79 @@
 
 
 // take Users array as input and filter out the users with age above 18
+// interface User{
+//     firstName:string,
+//     lastName:string,
+//     age:number,
+// }
+
+
+// function filterUser(users:User[]){ 
+
+//     return users.filter((user)=>user.age>=18)
+
+// }
+
+// const filteredUser=filterUser([{
+//     firstName:"harshit",
+//     lastName:"Kharayat",
+//     age:12
+
+// }])
+
+// console.log(filteredUser);
+
+
+/* Getting Started with classes and objects */
+
+// class Music{
+
+//     constructor(public name:string,public artist :string, public thumbnail :string){
+
+
+
+//     }
+
+
+// }
+
+
+// const album1=new Music("lets do it","Harshit","hi.jpg");
+
+// console.log(album1);
+
+
+
+
+
+class 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Will learn about advanced apis of Typescript
+
 interface User{
-    firstName:string,
-    lastName:string,
-    age:number,
+    name:string,
+    age:number
 }
 
-
-function filterUser(users:User[]){ 
-
-    return users.filter((user)=>user.age>=18)
-
+function sumAge(user1:User,user2:User):number{
+    return user1.age+user2.age;
 }
 
-const filteredUser=filterUser([{
-    firstName:"harshit",
-    lastName:"Kharayat",
-    age:12
+const age=sumAge({name:"Harshit",age:21},{name:"Anjali",age:20});
 
-}])
-
-console.log(filteredUser);
+console.log(age);
