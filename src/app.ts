@@ -362,7 +362,27 @@
 
 
 
-class 
+class BottleMaker{
+
+    constructor(public name:string){
+
+    }
+
+}
+class MetalBottelMaker extends BottleMaker{
+
+   
+    constructor(name:string){
+        super(name);
+    }
+    getValue(){
+        console.log(this.name);
+    }
+
+}
+
+let b1=new MetalBottelMaker("milton");
+b1.getValue();
 
 
 
