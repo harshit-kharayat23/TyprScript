@@ -460,7 +460,21 @@ console.log(u1);
 u1.age=21;
 console.log(u1);
 
+// about Static members
 
+class Harry{
+    static version=69.9;
+
+    static getRandomNumber(){
+        return Math.random();
+    }
+
+}
+
+console.log(Harry.version);
+console.log(Harry.getRandomNumber());
+
+// we can acces version without using new keyword or creating any objects
 
 
 
