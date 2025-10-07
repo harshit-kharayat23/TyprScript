@@ -386,101 +386,126 @@
 
 
 
-class BottleMaker{
+// class BottleMaker{
 
-        public name="Milton";
+//         public name="Milton";
 
-}
+// }
 
-class MetalBottelMaker extends BottleMaker{
+// class MetalBottelMaker extends BottleMaker{
 
-        public material="Metal"; 
+//         public material="Metal"; 
 
 
 
-}
+// }
 
-let b1=new MetalBottelMaker();
-console.log(b1);
+// let b1=new MetalBottelMaker();
+// console.log(b1);
 
-// readonly will not allow to change the name variable
+// // readonly will not allow to change the name variable
+// // class User{
+// //     constructor(public name:string){
+
+// //     }
+
+// //     changeName(){
+// //         this.name="hellow";
+// //     }
+
+// // }
+
+// // let u1=new User("Harsh");
+// // console.log(u1);
+// // u1.changeName();
+// // console.log(u1);
+
+
+// // Getter and setter using get and set
+
+
 // class User{
-//     constructor(public name:string){
+
+//     constructor(public _name:string,public _age:number){
 
 //     }
 
-//     changeName(){
-//         this.name="hellow";
+//     get name(){
+//         return this._name
+//     }
+
+//     set name(value:string){
+//         this._name=value;
+//     }
+//     get age(){
+//         return this._age;
+//     }
+
+//     set age(value:number){
+//         this._age=value;
 //     }
 
 // }
 
-// let u1=new User("Harsh");
-// console.log(u1);
-// u1.changeName();
+// let u1=new User("harshit",12);
 // console.log(u1);
 
+// console.log(u1.name);
+// u1.name="Anjali"
+// console.log(u1);
 
-// Getter and setter using get and set
+// console.log(u1.age);
+
+// console.log(u1);
+// u1.age=21;
+// console.log(u1);
+
+// // about Static members
+
+// class Harry{
+//     static version=69.9;
+
+//     static getRandomNumber(){
+//         return Math.random();
+//     }
+
+// }
+
+// console.log(Harry.version);
+// console.log(Harry.getRandomNumber());
+
+// // we can acces version without using new keyword or creating any objects
 
 
-class User{
 
-    constructor(public _name:string,public _age:number){
+// Function in Typscript
 
-    }
 
-    get name(){
-        return this._name
-    }
-
-    set name(value:string){
-        this._name=value;
-    }
-    get age(){
-        return this._age;
-    }
-
-    set age(value:number){
-        this._age=value;
-    }
-
+function abcdef(name:string,age:number,cb:(value:string)=>void){
+    cb("hello Harshit");
 }
 
-let u1=new User("harshit",12);
-console.log(u1);
 
-console.log(u1.name);
-u1.name="Anjali"
-console.log(u1);
+abcdef("harshit",22,(value:string)=>{
+    console.log(value) 
+})
 
-console.log(u1.age);
+// Optional and default Parameters
 
-console.log(u1);
-u1.age=21;
-console.log(u1);
-
-// about Static members
-
-class Harry{
-    static version=69.9;
-
-    static getRandomNumber(){
-        return Math.random();
-    }
-
+// option paramater using ?
+function toji(name:string,age:number,gender?:string){
+    console.log(name,age,gender);
 }
 
-console.log(Harry.version);
-console.log(Harry.getRandomNumber());
+toji("Harshit",22,"Male");
+toji("Anjali",20);
 
-// we can acces version without using new keyword or creating any objects
-
-
-
-
-
-
+// default parameter 
+function abc(name:string,age:number,gender:string="does not prefer to say"){
+    console.log(name,age,gender);
+}
+abc("Harsh",22,"Male");
+abc("Anjali",20);
 
 /// Will learn about advanced apis of Typescript
 
