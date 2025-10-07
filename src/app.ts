@@ -507,6 +507,42 @@ function abc(name:string,age:number,gender:string="does not prefer to say"){
 abc("Harsh",22,"Male");
 abc("Anjali",20);
 
+// rest parameters
+
+// rest / spread operator ...
+
+
+function sum(...arr:number[]){
+    console.log(arr);
+}
+function friends(...args:string[]){
+
+    console.log(args);
+
+}
+
+
+sum(1,2,3,4,5,6,7);
+friends("Harshit","Harsh","Tanay","Aditya","Divyanshu");
+
+// spread operator copies value to another 
+
+let arr1=[1,2,3,4];
+
+let arr2=[...arr1];
+console.log(arr2);
+
+
+
+
+
+
+
+
+
+
+
+
 /// Will learn about advanced apis of Typescript
 
 interface User{
