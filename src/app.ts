@@ -481,84 +481,148 @@
 // Function in Typscript
 
 
-function abcdef(name:string,age:number,cb:(value:string)=>void){
-    cb("hello Harshit");
-}
+// function abcdef(name:string,age:number,cb:(value:string)=>void){
+//     cb("hello Harshit");
+// }
 
 
-abcdef("harshit",22,(value:string)=>{
-    console.log(value) 
-})
+// abcdef("harshit",22,(value:string)=>{
+//     console.log(value) 
+// })
 
-// Optional and default Parameters
+// // Optional and default Parameters
 
-// option paramater using ?
-function toji(name:string,age:number,gender?:string){
-    console.log(name,age,gender);
-}
+// // option paramater using ?
+// function toji(name:string,age:number,gender?:string){
+//     console.log(name,age,gender);
+// }
 
-toji("Harshit",22,"Male");
-toji("Anjali",20);
+// toji("Harshit",22,"Male");
+// toji("Anjali",20);
 
-// default parameter 
-function abc(name:string,age:number,gender:string="does not prefer to say"){
-    console.log(name,age,gender);
-}
-abc("Harsh",22,"Male");
-abc("Anjali",20);
+// // default parameter 
+// function abc(name:string,age:number,gender:string="does not prefer to say"){
+//     console.log(name,age,gender);
+// }
+// abc("Harsh",22,"Male");
+// abc("Anjali",20);
 
-// rest parameters
+// // rest parameters
 
-// rest / spread operator ...
-
-
-function sum(...arr:number[]){
-    console.log(arr);
-}
-function friends(...args:string[]){
-
-    console.log(args);
-
-}
+// // rest / spread operator ...
 
 
-sum(1,2,3,4,5,6,7);
-friends("Harshit","Harsh","Tanay","Aditya","Divyanshu");
+// function sum(...arr:number[]){
+//     console.log(arr);
+// }
+// function friends(...args:string[]){
 
-// spread operator copies value to another 
+//     console.log(args);
 
-let arr1=[1,2,3,4];
+// }
 
-let arr2=[...arr1];
-console.log(arr2);
+
+// sum(1,2,3,4,5,6,7);
+// friends("Harshit","Harsh","Tanay","Aditya","Divyanshu");
+
+// // spread operator copies value to another 
+
+// let arr1=[1,2,3,4];
+
+// let arr2=[...arr1];
+// console.log(arr2);
 
 
 // function overloading
 
 // we need write the signature first in typescript
 
-function abcd(a:string):void;
+// function abcd(a:string):void;
 
-function abcd(a:string,b:number):void;
+// function abcd(a:string,b:number):void;
 
 
-function abcd(a:any,b?:any){
+// function abcd(a:any,b?:any){
 
-    if(typeof a=="string" && b===undefined){
-            console.log("first function");
-    }
-    else if(typeof a=="string" && typeof b=="number"){
-            console.log("second function");
-    }   
-    else {
-        throw new Error("Something went wrong!");
-    }
+//     if(typeof a=="string" && b===undefined){
+//             console.log("first function");
+//     }
+//     else if(typeof a=="string" && typeof b=="number"){
+//             console.log("second function");
+//     }   
+//     else {
+//         throw new Error("Something went wrong!");
+//     }
     
+
+// }
+
+// abcd("hey");
+// abcd("hello",2);
+
+
+
+
+// Generics
+
+
+// ak function use karte wqt we can tell how will function treate the function argumnet 
+
+// T-> template we can use other variables as well 
+
+function abcd<T>(a:T){
+    console.log(a);
+}
+
+abcd<number>(12);
+abcd<string>("Harsh");
+
+
+function abcdef<H>(a:H,b:string,c:number){
+    console.log(a," ",b, " ",c);
+}
+
+abcdef<string>("Halwa","Puri",4);
+
+
+
+// Use case
+
+// instead of using console.log() will make a generic function
+
+
+function log<T>(a:T){
+        console.log(a);
+}
+
+log<string>("hey");
+log<number>(12);
+
+log(12.5); // during call no need to  write the  log<float>(12.5)
+
+// Generic Interfaces
+
+
+interface Halwa<T>{
+    name:string,
+    age:number,
+    key:T,
 
 }
 
-abcd("hey");
-abcd("hello",2);
+function abcdefg(obj:Halwa<string>){
+    console.log(obj);
+}
+
+abcdefg({name:"Harshit",age:21,key:"qwertyuiop"});
+
+
+
+
+
+
+
+
 
 
 
@@ -570,15 +634,15 @@ abcd("hello",2);
 
 /// Will learn about advanced apis of Typescript
 
-interface User{
-    name:string,
-    age:number
-}
+// interface User{
+//     name:string,
+//     age:number
+// }
 
-function sumAge(user1:User,user2:User):number{
-    return user1.age+user2.age;
-}
+// function sumAge(user1:User,user2:User):number{
+//     return user1.age+user2.age;
+// }
 
-const age=sumAge({name:"Harshit",age:21},{name:"Anjali",age:20});
+// const age=sumAge({name:"Harshit",age:21},{name:"Anjali",age:20});
 
-console.log(age);
+// console.log(age);
