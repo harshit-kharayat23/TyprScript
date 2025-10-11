@@ -533,7 +533,32 @@ let arr2=[...arr1];
 console.log(arr2);
 
 
+// function overloading
 
+// we need write the signature first in typescript
+
+function abcd(a:string):void;
+
+function abcd(a:string,b:number):void;
+
+
+function abcd(a:any,b?:any){
+
+    if(typeof a=="string" && b===undefined){
+            console.log("first function");
+    }
+    else if(typeof a=="string" && typeof b=="number"){
+            console.log("second function");
+    }   
+    else {
+        throw new Error("Something went wrong!");
+    }
+    
+
+}
+
+abcd("hey");
+abcd("hello",2);
 
 
 
