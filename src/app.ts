@@ -651,41 +651,134 @@ log(b2);
 // (<number>a).
 
 
-// type casting
+// // type casting
 
-let a=Number("harshit");
+// let a=Number("harshit");
 
-log(typeof a);
+// log(typeof a);
 
 
-// Non- null  assertion  operator
+// // Non- null  assertion  operator
 
  
-let aa:string | null | undefined
-aa="harshit";
-// aa!   ! we use this if we are 100 % sure that it will not be undefined or null 
+// let aa:string | null | undefined
+// aa="harshit";
+// // aa!   ! we use this if we are 100 % sure that it will not be undefined or null 
 
 
 
 
+// Type Guards  also refer to as type narrowing
+
+
+function xyz(arg:string |number | any){
+
+    // type narrowing: using this if I do arg. then we will be able to get all methods for string and number
+
+    if(typeof arg =="string"){
+        return "string";
+    }
+    else if(typeof arg =="number"){
+        return "number";
+    }
+    else{
+        throw new Error("something went wrong!");
+    }
 
 
 
+}
+
+log(xyz("harsh"));
+log(xyz(21));
+log(xyz(true));
+
+
+// now we can do the same using instance of 
+
+
+class TvRemote{
+
+    switchTvOff(){
+        console.log("Switching of Tv");
+    }
 
 
 
+}
 
-/// Will learn about advanced apis of Typescript
+class CarRemote{
+    switchCarOff(){
+        console.log("Switching of Car")
+    }
+}
 
-// interface User{
-//     name:string,
-//     age:number
-// }
 
-// function sumAge(user1:User,user2:User):number{
-//     return user1.age+user2.age;
-// }
+let tv=new TvRemote();
+let car=new CarRemote();
 
-// const age=sumAge({name:"Harshit",age:21},{name:"Anjali",age:20});
 
-// console.log(age);
+function switchOffKaro(arg:TvRemote|CarRemote){
+
+    if(arg instanceof TvRemote){
+
+    }
+
+}
+
+
+//  Will learn about advanced apis of Typescript
+
+interface User1{
+    name:string,
+    age:number
+}
+
+function sumAge(user1:User1,user2:User1):number{
+    return user1.age+user2.age;
+}
+
+const age=sumAge({name:"Harshit",age:21},{name:"Anjali",age:20});
+
+console.log(age);
+
+
+// Pick : picking some properties from the interface helps in reducing the complexity of function parameters 
+// Partial: make all properties of a type optional ,creating with the type of the same properties 
+
+interface User{
+    name:string,
+    age:number,
+    email:string,
+    phone:number,
+
+}
+type UpdateProps=Pick<User,'name' | 'email' | 'age'>
+type UpdatePropsOptional=Partial<UpdateProps>
+
+function updateUser(updateProps:UpdatePropsOptional){
+
+
+
+}
+
+// Readonly:
+
+type Obj={
+    readonly name:"Harshit",
+    age:25,
+    country:'USA'
+
+
+
+}
+
+const obj:Obj={
+    name:"Harshit",
+    age:25,
+    country:'USA'
+}
+obj.name="Harshita"
+
+// but I want that I cannot change the name so for this readonly comes into play 
+// if we want to enforce all the inner values to be constant then we will use readonly
