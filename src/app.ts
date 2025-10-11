@@ -639,6 +639,32 @@ log(b2);
 
 
 
+// Modules in Tyescript
+
+
+// type assertion 
+
+
+
+// (a as string).
+// a as number
+// (<number>a).
+
+
+// type casting
+
+let a=Number("harshit");
+
+log(typeof a);
+
+
+// Non- null  assertion  operator
+
+ 
+let aa:string | null | undefined
+aa="harshit";
+// aa!   ! we use this if we are 100 % sure that it will not be undefined or null 
+
 
 
 
