@@ -612,12 +612,29 @@ interface Halwa<T>{
 
 function abcdefg(obj:Halwa<string>){
     console.log(obj);
+    log(obj.key);
 }
 
 abcdefg({name:"Harshit",age:21,key:"qwertyuiop"});
 
 
 
+// Generic Classes
+
+
+class BottleMaker <T>{
+
+    constructor(public key:T){
+
+    }
+
+
+}
+
+let b1=new BottleMaker("hi");
+let b2=new BottleMaker(21);
+log(b1);
+log(b2);
 
 
 
