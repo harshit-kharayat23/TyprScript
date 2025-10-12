@@ -778,7 +778,13 @@ const obj:Obj={
     age:25,
     country:'USA'
 }
-obj.name="Harshita"
+
 
 // but I want that I cannot change the name so for this readonly comes into play 
 // if we want to enforce all the inner values to be constant then we will use readonly
+
+
+
+// Records and maps
+
+
