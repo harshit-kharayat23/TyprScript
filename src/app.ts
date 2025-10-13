@@ -787,4 +787,5 @@ const obj:Obj={
 
 // Records and maps
 
+// records are used in typscript and maps are in general the map used in javascript
 
